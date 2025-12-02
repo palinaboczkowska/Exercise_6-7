@@ -1,52 +1,76 @@
-/* Base colors inspired by Forrest Gump poster (light blue, dark blue, red) */
+/* Base colors */
 :root {
-  --bg: #dcecf7;         /* Light blue background */
-  --text: #0e2a4d;       /* Dark blue text */
-  --accent: #b22222;     /* Red accent (for links and highlights) */
-  --footer-bg: #f2f6fb;  /* Slightly different background for footer */
-}
-
-* {
-  box-sizing: border-box;
+  --bg: #ecece0;
+  --text: #0e2a4d;
+  --accent: #b22222;
+  --footer-bg: #0e2a4d;
 }
 
 html, body {
-  height: 100%;
   margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-family: 'Merriweather', serif;
   color: var(--text);
   background: var(--bg);
 }
 
-/* Center all main content */
-main {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 24px 16px;
-  text-align: center;
-}
-
-/* Header with centered image and title */
+/* Header */
 header {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 24px 16px 0;
   text-align: center;
+  padding: 20px;
 }
 
 header img {
-  max-width: 300px;
-  height: auto;
   display: block;
-  margin: 0 auto 8px;
+  margin: 0 auto 10px;
+  max-height: 50px;
+  width: auto;
 }
 
-/* Section spacing */
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: var(--text);
+}
+
+/* Hero section with parallax */
+#hero {
+  position: relative;
+  background-image: url('src/forrest-gump-poster.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#hero .overlay {
+  background-color: rgba(0,0,0,0.4);
+  padding: 40px 20px;
+  border-radius: 8px;
+  color: #fff;
+}
+
+#hero h2 {
+  font-size: 2rem;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+
+/* Sections */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
 section {
-  margin: 20px 0;
+  margin: 40px 0;
 }
 
-/* Responsive and centered YouTube trailer */
+/* Trailer iframe */
 #trailer iframe {
   display: block;
   margin: 0 auto;
@@ -56,36 +80,35 @@ section {
   border: none;
 }
 
-/* Horizontal link list */
+/* Links horizontal */
 #links ul {
   list-style: none;
   padding: 0;
   margin: 16px 0;
   display: flex;
   justify-content: center;
-  gap: 16px; /* Space between links */
-  flex-wrap: wrap; /* Wrap on small screens */
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 #links a {
   color: var(--accent);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: bold;
 }
 
-#links a:hover,
-#links a:focus {
+#links a:hover {
   text-decoration: underline;
 }
 
 /* Footer */
 footer {
-  height: 50px;
+  height: 120px;
   background: var(--footer-bg);
+  color: #ffffff;
   display: flex;
-  align-items: center;     /* Vertical centering */
-  justify-content: center; /* Horizontal centering */
-  padding: 0 16px;
-  border-top: 1px solid rgba(0,0,0,0.08);
-  color: var(--text);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
 }
